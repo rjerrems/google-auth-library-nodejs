@@ -1,0 +1,1297 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>OAuth2Client | google-auth-library</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">google-auth-library</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_auth_oauth2client_.html">&quot;auth/oauth2client&quot;</a>
+				</li>
+				<li>
+					<a href="_auth_oauth2client_.oauth2client.html">OAuth2Client</a>
+				</li>
+			</ul>
+			<h1>Class OAuth2Client</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="_auth_authclient_.authclient.html" class="tsd-signature-type">AuthClient</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">OAuth2Client</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="_auth_computeclient_.compute.html" class="tsd-signature-type">Compute</a>
+									</li>
+									<li>
+										<a href="_auth_jwtclient_.jwt.html" class="tsd-signature-type">JWT</a>
+									</li>
+									<li>
+										<a href="_auth_refreshclient_.userrefreshclient.html" class="tsd-signature-type">UserRefreshClient</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#_clientid" class="tsd-kind-icon">_client<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#_clientsecret" class="tsd-kind-icon">_client<wbr>Secret</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#apikey" class="tsd-kind-icon">api<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_auth_oauth2client_.oauth2client.html#credentials" class="tsd-kind-icon">credentials</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_auth_oauth2client_.oauth2client.html#opts" class="tsd-kind-icon">opts</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#projectid" class="tsd-kind-icon">project<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_auth_oauth2client_.oauth2client.html#transporter" class="tsd-kind-icon">transporter</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#decodebase64" class="tsd-kind-icon">decode<wbr>Base64</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#generateauthurl" class="tsd-kind-icon">generate<wbr>Auth<wbr>Url</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#generatecodeverifier" class="tsd-kind-icon">generate<wbr>Code<wbr>Verifier</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#getaccesstoken" class="tsd-kind-icon">get<wbr>Access<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#getfederatedsignoncerts" class="tsd-kind-icon">get<wbr>Federated<wbr>Signon<wbr>Certs</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#getfederatedsignoncertsasync" class="tsd-kind-icon">get<wbr>Federated<wbr>Signon<wbr>Certs<wbr>Async</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#getrequestmetadata" class="tsd-kind-icon">get<wbr>Request<wbr>Metadata</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="_auth_oauth2client_.oauth2client.html#getrequestmetadataasync" class="tsd-kind-icon">get<wbr>Request<wbr>Metadata<wbr>Async</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#gettoken" class="tsd-kind-icon">get<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#refreshaccesstoken" class="tsd-kind-icon">refresh<wbr>Access<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_auth_oauth2client_.oauth2client.html#refreshtoken" class="tsd-kind-icon">refresh<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite"><a href="_auth_oauth2client_.oauth2client.html#request" class="tsd-kind-icon">request</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-protected"><a href="_auth_oauth2client_.oauth2client.html#requestasync" class="tsd-kind-icon">request<wbr>Async</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#revokecredentials" class="tsd-kind-icon">revoke<wbr>Credentials</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#revoketoken" class="tsd-kind-icon">revoke<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_auth_oauth2client_.oauth2client.html#setcredentials" class="tsd-kind-icon">set<wbr>Credentials</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#verifyidtoken" class="tsd-kind-icon">verify<wbr>IdToken</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_auth_oauth2client_.oauth2client.html#verifysignedjwtwithcerts" class="tsd-kind-icon">verify<wbr>Signed<wbr>Jwt<wbr>With<wbr>Certs</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new OAuth2<wbr>Client<span class="tsd-signature-symbol">(</span>clientId<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, clientSecret<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, redirectUri<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, opts<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_auth_oauth2client_.authclientopts.html" class="tsd-signature-type">AuthClientOpts</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_auth_oauth2client_.oauth2client.html" class="tsd-signature-type">OAuth2Client</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L233">auth/oauth2client.ts:233</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Handles OAuth2 flow for Google APIs.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>constructor</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> clientId: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The authentication client ID.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> clientSecret: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The authentication client secret.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> redirectUri: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The URI to redirect to after completing the auth request.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> opts: <a href="../interfaces/_auth_oauth2client_.authclientopts.html" class="tsd-signature-type">AuthClientOpts</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>optional options for overriding the given parameters.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_auth_oauth2client_.oauth2client.html" class="tsd-signature-type">OAuth2Client</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="_clientid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> _client<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">_client<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L226">auth/oauth2client.ts:226</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="_clientsecret" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> _client<wbr>Secret</h3>
+					<div class="tsd-signature tsd-kind-icon">_client<wbr>Secret<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L229">auth/oauth2client.ts:229</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="apikey" class="tsd-anchor"></a>
+					<h3>api<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">api<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L231">auth/oauth2client.ts:231</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="credentials" class="tsd-anchor"></a>
+					<h3>credentials</h3>
+					<div class="tsd-signature tsd-kind-icon">credentials<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_auth_credentials_.credentials.html" class="tsd-signature-type">Credentials</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_auth_authclient_.authclient.html">AuthClient</a>.<a href="_auth_authclient_.authclient.html#credentials">credentials</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/authclient.ts#L23">auth/authclient.ts:23</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="opts" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> opts</h3>
+					<div class="tsd-signature tsd-kind-icon">opts<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_auth_oauth2client_.authclientopts.html" class="tsd-signature-type">AuthClientOpts</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L223">auth/oauth2client.ts:223</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="projectid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> project<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">project<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L233">auth/oauth2client.ts:233</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="transporter" class="tsd-anchor"></a>
+					<h3>transporter</h3>
+					<div class="tsd-signature tsd-kind-icon">transporter<span class="tsd-signature-symbol">:</span> <a href="_transporters_.defaulttransporter.html" class="tsd-signature-type">DefaultTransporter</a><span class="tsd-signature-symbol"> =&nbsp;new DefaultTransporter()</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_auth_authclient_.authclient.html">AuthClient</a>.<a href="_auth_authclient_.authclient.html#transporter">transporter</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/authclient.ts#L22">auth/authclient.ts:22</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="decodebase64" class="tsd-anchor"></a>
+					<h3>decode<wbr>Base64</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">decode<wbr>Base64<span class="tsd-signature-symbol">(</span>b64String<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L912">auth/oauth2client.ts:912</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This is a utils method to decode a base64 string</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>b64String: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The string to base64 decode</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>The decoded string</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="generateauthurl" class="tsd-anchor"></a>
+					<h3>generate<wbr>Auth<wbr>Url</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Auth<wbr>Url<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_auth_oauth2client_.generateauthurlopts.html" class="tsd-signature-type">GenerateAuthUrlOpts</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L300">auth/oauth2client.ts:300</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Generates URL for consent page landing.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> opts: <a href="../interfaces/_auth_oauth2client_.generateauthurlopts.html" class="tsd-signature-type">GenerateAuthUrlOpts</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Options.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>URL to consent page.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="generatecodeverifier" class="tsd-anchor"></a>
+					<h3>generate<wbr>Code<wbr>Verifier</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Code<wbr>Verifier<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L323">auth/oauth2client.ts:323</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convenience method to automatically generate a code_verifier, and it&#39;s
+										resulting SHA256. If used, this must be paired with a S256
+									code_challenge_method.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>code<wbr>Challenge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>code<wbr>Verifier<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getaccesstoken" class="tsd-anchor"></a>
+					<h3>get<wbr>Access<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Access<wbr>Token<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.getaccesstokenresponse.html" class="tsd-signature-type">GetAccessTokenResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Access<wbr>Token<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_oauth2client_.getaccesstokencallback.html" class="tsd-signature-type">GetAccessTokenCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L460">auth/oauth2client.ts:460</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get a non-expired access token, after refreshing if necessary</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.getaccesstokenresponse.html" class="tsd-signature-type">GetAccessTokenResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L461">auth/oauth2client.ts:461</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>callback: <a href="../interfaces/_auth_oauth2client_.getaccesstokencallback.html" class="tsd-signature-type">GetAccessTokenCallback</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getfederatedsignoncerts" class="tsd-anchor"></a>
+					<h3>get<wbr>Federated<wbr>Signon<wbr>Certs</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Federated<wbr>Signon<wbr>Certs<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.federatedsignoncertsresponse.html" class="tsd-signature-type">FederatedSignonCertsResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Federated<wbr>Signon<wbr>Certs<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_oauth2client_.getfederatedsignoncertscallback.html" class="tsd-signature-type">GetFederatedSignonCertsCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L739">auth/oauth2client.ts:739</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets federated sign-on certificates to use for verifying identity tokens.
+										Returns certs as array structure, where keys are key ids, and values
+									are PEM encoded certificates.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.federatedsignoncertsresponse.html" class="tsd-signature-type">FederatedSignonCertsResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L740">auth/oauth2client.ts:740</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>callback: <a href="../interfaces/_auth_oauth2client_.getfederatedsignoncertscallback.html" class="tsd-signature-type">GetFederatedSignonCertsCallback</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getfederatedsignoncertsasync" class="tsd-anchor"></a>
+					<h3>get<wbr>Federated<wbr>Signon<wbr>Certs<wbr>Async</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Federated<wbr>Signon<wbr>Certs<wbr>Async<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.federatedsignoncertsresponse.html" class="tsd-signature-type">FederatedSignonCertsResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L752">auth/oauth2client.ts:752</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.federatedsignoncertsresponse.html" class="tsd-signature-type">FederatedSignonCertsResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getrequestmetadata" class="tsd-anchor"></a>
+					<h3>get<wbr>Request<wbr>Metadata</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Request<wbr>Metadata<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.requestmetadataresponse.html" class="tsd-signature-type">RequestMetadataResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Request<wbr>Metadata<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, callback<span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_oauth2client_.requestmetadatacallback.html" class="tsd-signature-type">RequestMetadataCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L514">auth/oauth2client.ts:514</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>getRequestMetadata obtains auth metadata to be used by requests.</p>
+								</div>
+								<p>getRequestMetadata is the main authentication interface.  It takes an
+									optional uri which when present is the endpoint being accessed, and a
+									callback func(err, metadata_obj, response) where metadata_obj contains
+								authorization metadata fields and response is an optional response object.</p>
+								<p>In OAuth2Client, metadata_obj has the form.</p>
+								<p>{Authorization: &#39;Bearer <access_token_value>&#39;}</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> url: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.requestmetadataresponse.html" class="tsd-signature-type">RequestMetadataResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L515">auth/oauth2client.ts:515</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+								<li>
+									<h5>callback: <a href="../interfaces/_auth_oauth2client_.requestmetadatacallback.html" class="tsd-signature-type">RequestMetadataCallback</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="getrequestmetadataasync" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> get<wbr>Request<wbr>Metadata<wbr>Async</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Request<wbr>Metadata<wbr>Async<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.requestmetadataresponse.html" class="tsd-signature-type">RequestMetadataResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L527">auth/oauth2client.ts:527</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> url: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.requestmetadataresponse.html" class="tsd-signature-type">RequestMetadataResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gettoken" class="tsd-anchor"></a>
+					<h3>get<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Token<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.gettokenresponse.html" class="tsd-signature-type">GetTokenResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Token<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_oauth2client_.gettokenoptions.html" class="tsd-signature-type">GetTokenOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.gettokenresponse.html" class="tsd-signature-type">GetTokenResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Token<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_oauth2client_.gettokencallback.html" class="tsd-signature-type">GetTokenCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Token<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_oauth2client_.gettokenoptions.html" class="tsd-signature-type">GetTokenOptions</a>, callback<span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_oauth2client_.gettokencallback.html" class="tsd-signature-type">GetTokenCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L347">auth/oauth2client.ts:347</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets the access token for the given code.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The authorization code.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.gettokenresponse.html" class="tsd-signature-type">GetTokenResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L348">auth/oauth2client.ts:348</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../interfaces/_auth_oauth2client_.gettokenoptions.html" class="tsd-signature-type">GetTokenOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.gettokenresponse.html" class="tsd-signature-type">GetTokenResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L349">auth/oauth2client.ts:349</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>callback: <a href="../interfaces/_auth_oauth2client_.gettokencallback.html" class="tsd-signature-type">GetTokenCallback</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L350">auth/oauth2client.ts:350</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../interfaces/_auth_oauth2client_.gettokenoptions.html" class="tsd-signature-type">GetTokenOptions</a></h5>
+								</li>
+								<li>
+									<h5>callback: <a href="../interfaces/_auth_oauth2client_.gettokencallback.html" class="tsd-signature-type">GetTokenCallback</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="refreshaccesstoken" class="tsd-anchor"></a>
+					<h3>refresh<wbr>Access<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">refresh<wbr>Access<wbr>Token<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.refreshaccesstokenresponse.html" class="tsd-signature-type">RefreshAccessTokenResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">refresh<wbr>Access<wbr>Token<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_oauth2client_.refreshaccesstokencallback.html" class="tsd-signature-type">RefreshAccessTokenCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L431">auth/oauth2client.ts:431</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves the access token using refresh token</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd><p>use getRequestMetadata instead.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.refreshaccesstokenresponse.html" class="tsd-signature-type">RefreshAccessTokenResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L432">auth/oauth2client.ts:432</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>callback: <a href="../interfaces/_auth_oauth2client_.refreshaccesstokencallback.html" class="tsd-signature-type">RefreshAccessTokenCallback</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="refreshtoken" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> refresh<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">refresh<wbr>Token<span class="tsd-signature-symbol">(</span>refreshToken<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.gettokenresponse.html" class="tsd-signature-type">GetTokenResponse</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L397">auth/oauth2client.ts:397</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Refreshes the access token.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> refreshToken: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.gettokenresponse.html" class="tsd-signature-type">GetTokenResponse</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
+					<a name="request" class="tsd-anchor"></a>
+					<h3>request</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">request&lt;T&gt;<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosRequestConfig</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">request&lt;T&gt;<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosRequestConfig</span>, callback<span class="tsd-signature-symbol">: </span><a href="../interfaces/_transporters_.bodyresponsecallback.html" class="tsd-signature-type">BodyResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_auth_authclient_.authclient.html">AuthClient</a>.<a href="_auth_authclient_.authclient.html#request">request</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L639">auth/oauth2client.ts:639</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Provides a request implementation with OAuth 2.0 flow.
+										If credentials have a refresh_token, in cases of HTTP
+										401 and 403 responses, it automatically asks for a new
+									access token and replays the unsuccessful request.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>opts: <span class="tsd-signature-type">AxiosRequestConfig</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Request options.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Request object</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_auth_authclient_.authclient.html">AuthClient</a>.<a href="_auth_authclient_.authclient.html#request">request</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L640">auth/oauth2client.ts:640</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>opts: <span class="tsd-signature-type">AxiosRequestConfig</span></h5>
+								</li>
+								<li>
+									<h5>callback: <a href="../interfaces/_transporters_.bodyresponsecallback.html" class="tsd-signature-type">BodyResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-protected">
+					<a name="requestasync" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> request<wbr>Async</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">request<wbr>Async&lt;T&gt;<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosRequestConfig</span>, retry<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AxiosResponse</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L654">auth/oauth2client.ts:654</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>opts: <span class="tsd-signature-type">AxiosRequestConfig</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> retry: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">AxiosResponse</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="revokecredentials" class="tsd-anchor"></a>
+					<h3>revoke<wbr>Credentials</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">revoke<wbr>Credentials<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.revokecredentialsresult.html" class="tsd-signature-type">RevokeCredentialsResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">revoke<wbr>Credentials<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><a href="../interfaces/_transporters_.bodyresponsecallback.html" class="tsd-signature-type">BodyResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.revokecredentialsresult.html" class="tsd-signature-type">RevokeCredentialsResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L606">auth/oauth2client.ts:606</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Revokes access token and clears the credentials object</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.revokecredentialsresult.html" class="tsd-signature-type">RevokeCredentialsResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L607">auth/oauth2client.ts:607</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>callback: <a href="../interfaces/_transporters_.bodyresponsecallback.html" class="tsd-signature-type">BodyResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.revokecredentialsresult.html" class="tsd-signature-type">RevokeCredentialsResult</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="revoketoken" class="tsd-anchor"></a>
+					<h3>revoke<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">revoke<wbr>Token<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.revokecredentialsresult.html" class="tsd-signature-type">RevokeCredentialsResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">revoke<wbr>Token<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><a href="../interfaces/_transporters_.bodyresponsecallback.html" class="tsd-signature-type">BodyResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.revokecredentialsresult.html" class="tsd-signature-type">RevokeCredentialsResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L579">auth/oauth2client.ts:579</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Revokes the access given to token.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>token: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The existing token to be revoked.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AxiosPromise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.revokecredentialsresult.html" class="tsd-signature-type">RevokeCredentialsResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L580">auth/oauth2client.ts:580</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>token: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>callback: <a href="../interfaces/_transporters_.bodyresponsecallback.html" class="tsd-signature-type">BodyResponseCallback</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_auth_oauth2client_.revokecredentialsresult.html" class="tsd-signature-type">RevokeCredentialsResult</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setcredentials" class="tsd-anchor"></a>
+					<h3>set<wbr>Credentials</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Credentials<span class="tsd-signature-symbol">(</span>credentials<span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_credentials_.credentials.html" class="tsd-signature-type">Credentials</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_auth_authclient_.authclient.html">AuthClient</a>.<a href="_auth_authclient_.authclient.html#setcredentials">setCredentials</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/authclient.ts#L33">auth/authclient.ts:33</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the auth credentials.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>credentials: <a href="../interfaces/_auth_credentials_.credentials.html" class="tsd-signature-type">Credentials</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="verifyidtoken" class="tsd-anchor"></a>
+					<h3>verify<wbr>IdToken</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">verify<wbr>IdToken<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_oauth2client_.verifyidtokenoptions.html" class="tsd-signature-type">VerifyIdTokenOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_auth_loginticket_.loginticket.html" class="tsd-signature-type">LoginTicket</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">verify<wbr>IdToken<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_oauth2client_.verifyidtokenoptions.html" class="tsd-signature-type">VerifyIdTokenOptions</a>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L694">auth/oauth2client.ts:694</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Verify id token is token by checking the certs and audience</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../interfaces/_auth_oauth2client_.verifyidtokenoptions.html" class="tsd-signature-type">VerifyIdTokenOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_auth_loginticket_.loginticket.html" class="tsd-signature-type">LoginTicket</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L695">auth/oauth2client.ts:695</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="../interfaces/_auth_oauth2client_.verifyidtokenoptions.html" class="tsd-signature-type">VerifyIdTokenOptions</a></h5>
+								</li>
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, login<span class="tsd-signature-symbol">?: </span><a href="_auth_loginticket_.loginticket.html" class="tsd-signature-type">LoginTicket</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>err: <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+														</li>
+														<li>
+															<h5><span class="tsd-flag ts-flagOptional">Optional</span> login: <a href="_auth_loginticket_.loginticket.html" class="tsd-signature-type">LoginTicket</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="verifysignedjwtwithcerts" class="tsd-anchor"></a>
+					<h3>verify<wbr>Signed<wbr>Jwt<wbr>With<wbr>Certs</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">verify<wbr>Signed<wbr>Jwt<wbr>With<wbr>Certs<span class="tsd-signature-symbol">(</span>jwt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, certs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">__type</span>, requiredAudience<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, issuers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, maxExpiry<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_auth_loginticket_.loginticket.html" class="tsd-signature-type">LoginTicket</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/JustinBeckwith/google-auth-library-nodejs/blob/a5c5559/src/auth/oauth2client.ts#L794">auth/oauth2client.ts:794</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Verify the id token is signed with the correct certificate
+									and is from the correct audience.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>jwt: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The jwt to verify (The ID Token in this case).</p>
+									</div>
+								</li>
+								<li>
+									<h5>certs: <span class="tsd-signature-type">__type</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The array of certs to test the jwt against.</p>
+									</div>
+								</li>
+								<li>
+									<h5>requiredAudience: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The audience to test the jwt against.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> issuers: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The allowed issuers of the jwt (Optional).</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> maxExpiry: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The max expiry the certificate can be (Optional).</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_auth_loginticket_.loginticket.html" class="tsd-signature-type">LoginTicket</a></h4>
+							<p>Returns a LoginTicket on verification.</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_auth_authclient_.html">"auth/authclient"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_auth_computeclient_.html">"auth/computeclient"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_auth_credentials_.html">"auth/credentials"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_auth_googleauth_.html">"auth/googleauth"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_auth_iam_.html">"auth/iam"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_auth_jwtaccess_.html">"auth/jwtaccess"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_auth_jwtclient_.html">"auth/jwtclient"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_auth_loginticket_.html">"auth/loginticket"</a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_auth_oauth2client_.html">"auth/oauth2client"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_auth_refreshclient_.html">"auth/refreshclient"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_index_.html">"index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_options_.html">"options"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_pemverifier_.html">"pemverifier"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_transporters_.html">"transporters"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
+						<a href="../enums/_auth_oauth2client_.codechallengemethod.html" class="tsd-kind-icon">Code<wbr>Challenge<wbr>Method</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_auth_oauth2client_.oauth2client.html" class="tsd-kind-icon">OAuth2<wbr>Client</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#_clientid" class="tsd-kind-icon">_client<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#_clientsecret" class="tsd-kind-icon">_client<wbr>Secret</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#apikey" class="tsd-kind-icon">api<wbr>Key</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_auth_oauth2client_.oauth2client.html#credentials" class="tsd-kind-icon">credentials</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_auth_oauth2client_.oauth2client.html#opts" class="tsd-kind-icon">opts</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#projectid" class="tsd-kind-icon">project<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_auth_oauth2client_.oauth2client.html#transporter" class="tsd-kind-icon">transporter</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#decodebase64" class="tsd-kind-icon">decode<wbr>Base64</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#generateauthurl" class="tsd-kind-icon">generate<wbr>Auth<wbr>Url</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#generatecodeverifier" class="tsd-kind-icon">generate<wbr>Code<wbr>Verifier</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#getaccesstoken" class="tsd-kind-icon">get<wbr>Access<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#getfederatedsignoncerts" class="tsd-kind-icon">get<wbr>Federated<wbr>Signon<wbr>Certs</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#getfederatedsignoncertsasync" class="tsd-kind-icon">get<wbr>Federated<wbr>Signon<wbr>Certs<wbr>Async</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#getrequestmetadata" class="tsd-kind-icon">get<wbr>Request<wbr>Metadata</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="_auth_oauth2client_.oauth2client.html#getrequestmetadataasync" class="tsd-kind-icon">get<wbr>Request<wbr>Metadata<wbr>Async</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#gettoken" class="tsd-kind-icon">get<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#refreshaccesstoken" class="tsd-kind-icon">refresh<wbr>Access<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="_auth_oauth2client_.oauth2client.html#refreshtoken" class="tsd-kind-icon">refresh<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
+								<a href="_auth_oauth2client_.oauth2client.html#request" class="tsd-kind-icon">request</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-protected">
+								<a href="_auth_oauth2client_.oauth2client.html#requestasync" class="tsd-kind-icon">request<wbr>Async</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#revokecredentials" class="tsd-kind-icon">revoke<wbr>Credentials</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#revoketoken" class="tsd-kind-icon">revoke<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_auth_oauth2client_.oauth2client.html#setcredentials" class="tsd-kind-icon">set<wbr>Credentials</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#verifyidtoken" class="tsd-kind-icon">verify<wbr>IdToken</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_auth_oauth2client_.oauth2client.html#verifysignedjwtwithcerts" class="tsd-kind-icon">verify<wbr>Signed<wbr>Jwt<wbr>With<wbr>Certs</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.authclientopts.html" class="tsd-kind-icon">Auth<wbr>Client<wbr>Opts</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.federatedsignoncertsresponse.html" class="tsd-kind-icon">Federated<wbr>Signon<wbr>Certs<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.generateauthurlopts.html" class="tsd-kind-icon">Generate<wbr>Auth<wbr>Url<wbr>Opts</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.getaccesstokencallback.html" class="tsd-kind-icon">Get<wbr>Access<wbr>Token<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.getaccesstokenresponse.html" class="tsd-kind-icon">Get<wbr>Access<wbr>Token<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.getfederatedsignoncertscallback.html" class="tsd-kind-icon">Get<wbr>Federated<wbr>Signon<wbr>Certs<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.gettokencallback.html" class="tsd-kind-icon">Get<wbr>Token<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.gettokenoptions.html" class="tsd-kind-icon">Get<wbr>Token<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.gettokenresponse.html" class="tsd-kind-icon">Get<wbr>Token<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.refreshaccesstokencallback.html" class="tsd-kind-icon">Refresh<wbr>Access<wbr>Token<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.refreshaccesstokenresponse.html" class="tsd-kind-icon">Refresh<wbr>Access<wbr>Token<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.requestmetadatacallback.html" class="tsd-kind-icon">Request<wbr>Metadata<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.requestmetadataresponse.html" class="tsd-kind-icon">Request<wbr>Metadata<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.revokecredentialsresult.html" class="tsd-kind-icon">Revoke<wbr>Credentials<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_auth_oauth2client_.verifyidtokenoptions.html" class="tsd-kind-icon">Verify<wbr>IdToken<wbr>Options</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

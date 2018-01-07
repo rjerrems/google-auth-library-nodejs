@@ -1,0 +1,464 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>google-auth-library</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">google-auth-library</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> google-auth-library</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<p><img src="https://avatars0.githubusercontent.com/u/1342004?v=3&s=96" alt="Google Inc. logo" title="Google" align="right" height="96" width="96"/></p>
+				<h1 id="google-auth-library">Google Auth Library</h1>
+				<p><a href="https://www.npmjs.org/package/google-auth-library"><img src="https://img.shields.io/npm/v/google-auth-library.svg" alt="npm version"></a>
+					<a href="https://travis-ci.org/google/google-auth-library-nodejs"><img src="https://api.travis-ci.org/google/google-auth-library-nodejs.svg" alt="Build Status"></a>
+					<a href="https://coveralls.io/r/google/google-auth-library-nodejs?branch=master"><img src="https://img.shields.io/coveralls/google/google-auth-library-nodejs.svg" alt="Code Coverage"></a>
+					<a href="https://david-dm.org/google/google-auth-library-nodejs"><img src="https://david-dm.org/google/google-auth-library-nodejs/status.svg" alt="Dependencies"></a>
+				<a href="https://snyk.io/test/github/google/google-auth-library"><img src="https://snyk.io/test/github/google/google-auth-library/badge.svg" alt="Known Vulnerabilities"></a></p>
+				<p>This is Google&#39;s officially supported <a href="http://nodejs.org/">node.js</a> client library for using OAuth 2.0 authorization and authentication with Google APIs.</p>
+				<h2 id="installation">Installation</h2>
+				<p>This library is distributed on <code>npm</code>. To add it as a dependency, run the following command:</p>
+				<pre><code class="lang-sh">$ npm install google-auth-library
+</code></pre>
+				<h2 id="upgrading-to-1-x">Upgrading to 1.x</h2>
+				<p>The <code>1.x</code> release includes a variety of bug fixes, new features, and breaking changes. Please take care, and see <a href="https://github.com/google/google-auth-library-nodejs/releases/tag/1.0.0-alpha.1">the release notes</a> for a list of breaking changes, and the upgrade guide.</p>
+				<h2 id="ways-to-authenticate">Ways to authenticate</h2>
+				<p>This library provides a variety of ways to authenticate to your Google services.</p>
+				<ul>
+					<li><a href="#choosing-the-correct-credential-type-automatically">Application Default Credentials</a> - Use Application Default Credentials when you use a single identity for all users in your application. Especially useful for applications running on Google Cloud.</li>
+					<li><a href="#oauth2-client">OAuth 2</a> - Use OAuth2 when you need to perform actions on behalf of the end user.</li>
+					<li><a href="#using-json-web-tokens">JSON Web Tokens</a> - Use JWT when you are using a single identity for all users.  Especially useful for server-&gt;server or server-&gt;API communication.</li>
+				</ul>
+				<h2 id="application-default-credentials">Application Default Credentials</h2>
+				<p>This library provides an implementation of <a href="https://developers.google.com/identity/protocols/application-default-credentials#callingnode">Application Default Credentials</a> for Node.js. The <a href="https://developers.google.com/identity/protocols/application-default-credentials#callingnode">Application Default Credentials</a> provide a simple way to get authorization credentials for use in calling Google APIs.</p>
+				<p>They are best suited for cases when the call needs to have the same identity and authorization level for the application independent of the user. This is the recommended approach to authorize calls to Cloud APIs, particularly when you&#39;re building an application that uses Google Cloud Platform.</p>
+				<h4 id="download-your-service-account-credentials-json-file">Download your Service Account Credentials JSON file</h4>
+				<p>To use <code>Application Default Credentials</code>, You first need to download a set of JSON credentials for your project. Go to <strong>APIs &amp; Auth</strong> &gt; <strong>Credentials</strong> in the <a href="https://console.developer.google.com">Google Developers Console</a> and select <strong>Service account</strong> from the <strong>Add credentials</strong> dropdown.</p>
+				<blockquote>
+					<p>This file is your <em>only copy</em> of these credentials. It should never be
+					committed with your source code, and should be stored securely.</p>
+				</blockquote>
+				<p>Once downloaded, store the path to this file in the <code>GOOGLE_APPLICATION_CREDENTIALS</code> environment variable.</p>
+				<h4 id="enable-the-api-you-want-to-use">Enable the API you want to use</h4>
+				<p>Before making your API call, you must be sure the API you&#39;re calling has been enabled. Go to <strong>APIs &amp; Auth</strong> &gt; <strong>APIs</strong> in the <a href="https://console.developer.google.com">Google Developers Console</a> and enable the APIs you&#39;d like to call. For the example below, you must enable the <code>DNS API</code>.</p>
+				<h4 id="choosing-the-correct-credential-type-automatically">Choosing the correct credential type automatically</h4>
+				<p>Rather than manually creating an OAuth2 client, JWT client, or Compute client, the auth library can create the correct credential type for you, depending upon the environment your code is running under.</p>
+				<p>For example, a JWT auth client will be created when your code is running on your local developer machine, and a Compute client will be created when the same code is running on Google Cloud Platform.</p>
+				<p>The code below shows how to retrieve a default credential type, depending upon the runtime environment. The createScopedRequired must be called to determine when you need to pass in the scopes manually, and when they have been set for you automatically based on the configured runtime environment.</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> GoogleAuth = <span class="hljs-built_in">require</span>(<span class="hljs-string">'google-auth-library'</span>).GoogleAuth;
+<span class="hljs-keyword">const</span> auth = <span class="hljs-keyword">new</span> GoogleAuth();
+
+<span class="hljs-comment">/**
+ * Acquire a client, and make a request to an API that's enabled by default.
+ */</span>
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> adc = <span class="hljs-keyword">await</span> getADC();
+    <span class="hljs-keyword">const</span> url = <span class="hljs-string">`https://www.googleapis.com/dns/v1/projects/<span class="hljs-subst">${adc.projectId}</span>`</span>;
+    <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> adc.client.request({url});
+    <span class="hljs-built_in">console</span>.log(res.data);
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Error making request.'</span>);
+    <span class="hljs-built_in">console</span>.error(e);
+  }
+}
+
+<span class="hljs-comment">/**
+ * Instead of specifying the type of client you'd like to use (JWT, OAuth2, etc)
+ * this library will automatically choose the right client based on the environment.
+ */</span>
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getADC</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Acquire a client and the projectId based on the environment. This method looks</span>
+  <span class="hljs-comment">// for the GCLOUD_PROJECT and GOOGLE_APPLICATION_CREDENTIALS environment variables.</span>
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> auth.getApplicationDefault();
+  <span class="hljs-keyword">let</span> client = res.credential;
+
+  <span class="hljs-comment">// The createScopedRequired method returns true when running on GAE or a local developer</span>
+  <span class="hljs-comment">// machine. In that case, the desired scopes must be passed in manually. When the code is</span>
+  <span class="hljs-comment">// running in GCE or a Managed VM, the scopes are pulled from the GCE metadata server.</span>
+  <span class="hljs-comment">// See https://cloud.google.com/compute/docs/authentication for more information.</span>
+  <span class="hljs-keyword">if</span> (client.createScopedRequired &amp;&amp; client.createScopedRequired()) {
+    <span class="hljs-comment">// Scopes can be specified either as an array or as a single, space-delimited string.</span>
+    <span class="hljs-keyword">const</span> scopes = [<span class="hljs-string">'https://www.googleapis.com/auth/cloud-platform'</span>];
+    client = client.createScoped(scopes);
+  }
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">client</span>: client,
+    <span class="hljs-attr">projectId</span>: res.projectId
+  }
+}
+
+main();
+</code></pre>
+				<h4 id="oauth2-client">OAuth2 client</h4>
+				<p>This client comes with an <a href="https://developers.google.com/accounts/docs/OAuth2">OAuth2</a> client that allows you to retrieve an access token and refreshes the token and retry the request seamlessly if you also provide an <code>expiry_date</code> and the token is expired. The basics of Google&#39;s OAuth2 implementation is explained on <a href="https://developers.google.com/accounts/docs/OAuth2Login">Google Authorization and Authentication documentation</a>.</p>
+				<p>In the following examples, you may need a <code>CLIENT_ID</code>, <code>CLIENT_SECRET</code> and <code>REDIRECT_URL</code>. You can find these pieces of information by going to the <a href="https://console.developer.google.com">Developer Console</a>, clicking your project &gt; APIs &amp; auth &gt; credentials.</p>
+				<p>For more information about OAuth2 and how it works, <a href="https://developers.google.com/accounts/docs/OAuth2">see here</a>.</p>
+				<h5 id="a-complete-oauth2-example">A complete OAuth2 example</h5>
+				<p>Let&#39;s take a look at a complete example.</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> OAuth2Client = <span class="hljs-built_in">require</span>(<span class="hljs-string">'google-auth-library'</span>).OAuth2Client;
+<span class="hljs-keyword">const</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">const</span> url = <span class="hljs-built_in">require</span>(<span class="hljs-string">'url'</span>);
+<span class="hljs-keyword">const</span> querystring = <span class="hljs-built_in">require</span>(<span class="hljs-string">'querystring'</span>);
+<span class="hljs-keyword">const</span> opn = <span class="hljs-built_in">require</span>(<span class="hljs-string">'opn'</span>);
+
+<span class="hljs-comment">// Download your OAuth2 configuration from the Google</span>
+<span class="hljs-keyword">const</span> keys = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./keys.json'</span>);
+
+<span class="hljs-comment">/**
+ * Start by acquiring a pre-authenticated oAuth2 client.
+ */</span>
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> oAuth2Client = <span class="hljs-keyword">await</span> getAuthenticatedClient();
+    <span class="hljs-comment">// Make a simple request to the Google Plus API using our pre-authenticated client. The `request()` method</span>
+    <span class="hljs-comment">// takes an AxiosRequestConfig object.  Visit https://github.com/axios/axios#request-config.</span>
+    <span class="hljs-keyword">const</span> url = <span class="hljs-string">'https://www.googleapis.com/plus/v1/people?query=pizza'</span>;
+    <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> oAuth2Client.request({url})
+    <span class="hljs-built_in">console</span>.log(res.data);
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-built_in">console</span>.error(e);
+  }
+  process.exit();
+}
+
+<span class="hljs-comment">/**
+ * Create a new OAuth2Client, and go through the OAuth2 content
+ * workflow.  Return the full client to the callback.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAuthenticatedClient</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+    <span class="hljs-comment">// create an oAuth client to authorize the API call.  Secrets are kept in a `keys.json` file,</span>
+    <span class="hljs-comment">// which should be downloaded from the Google Developers Console.</span>
+    <span class="hljs-keyword">const</span> oAuth2Client = <span class="hljs-keyword">new</span> OAuth2Client(
+      keys.web.client_id,
+      keys.web.client_secret,
+      keys.web.redirect_uris[<span class="hljs-number">0</span>]
+    );
+
+    <span class="hljs-comment">// Generate the url that will be used for the consent dialog.</span>
+    <span class="hljs-keyword">const</span> authorizeUrl = oAuth2Client.generateAuthUrl({
+      <span class="hljs-attr">access_type</span>: <span class="hljs-string">'offline'</span>,
+      <span class="hljs-attr">scope</span>: <span class="hljs-string">'https://www.googleapis.com/auth/plus.me'</span>
+    });
+
+    <span class="hljs-comment">// Open an http server to accept the oauth callback. In this simple example, the</span>
+    <span class="hljs-comment">// only request to our webserver is to /oauth2callback?code=&lt;code&gt;</span>
+    <span class="hljs-keyword">const</span> server = http.createServer(<span class="hljs-keyword">async</span> (req, res) =&gt; {
+      <span class="hljs-keyword">if</span> (req.url.indexOf(<span class="hljs-string">'/oauth2callback'</span>) &gt; <span class="hljs-number">-1</span>) {
+        <span class="hljs-comment">// acquire the code from the querystring, and close the web server.</span>
+        <span class="hljs-keyword">const</span> qs = querystring.parse(url.parse(req.url).query);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Code is <span class="hljs-subst">${qs.code}</span>`</span>);
+        res.end(<span class="hljs-string">'Authentication successful! Please return to the console.'</span>);
+        server.close();
+
+        <span class="hljs-comment">// Now that we have the code, use that to acquire tokens.</span>
+        <span class="hljs-keyword">const</span> r = <span class="hljs-keyword">await</span> oAuth2Client.getToken(qs.code)
+        <span class="hljs-comment">// Make sure to set the credentials on the OAuth2 client.</span>
+        oAuth2Client.setCredentials(r.tokens);
+        <span class="hljs-built_in">console</span>.info(<span class="hljs-string">'Tokens acquired.'</span>);
+        resolve(oAuth2Client);
+      }
+    }).listen(<span class="hljs-number">3000</span>, () =&gt; {
+      <span class="hljs-comment">// open the browser to the authorize url to start the workflow</span>
+      opn(authorizeUrl);
+    });
+  });
+}
+
+main();
+</code></pre>
+				<h5 id="important-note">IMPORTANT NOTE</h5>
+				<p><code>refresh_token</code> is only returned on the first authorization.
+				More details <a href="https://github.com/google/google-api-nodejs-client/issues/750#issuecomment-304521450">here</a></p>
+				<h5 id="retrieve-access-token">Retrieve access token</h5>
+				<p>With the code returned, you can ask for an access token as shown below:</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> tokens = <span class="hljs-keyword">await</span> oauth2Client.getToken(code);
+<span class="hljs-comment">// Now tokens contains an access_token and an optional refresh_token. Save them.</span>
+oauth2Client.setCredentials(tokens);
+</code></pre>
+				<h5 id="manually-refreshing-access-token">Manually refreshing access token</h5>
+				<p>If you need to manually refresh the <code>access_token</code> associated with your OAuth2 client, ensure the call to <code>generateAuthUrl</code> sets the <code>access_type</code> to <code>offline</code>.  The refresh token will only be returned for the first authorization by the user.  To force consent, set the <code>prompt</code> property to <code>consent</code>:</p>
+				<pre><code class="lang-js"><span class="hljs-comment">// Generate the url that will be used for the consent dialog.</span>
+<span class="hljs-keyword">const</span> authorizeUrl = oAuth2Client.generateAuthUrl({
+  <span class="hljs-comment">// To get a refresh token, you MUST set access_type to `offline`.</span>
+  access_type: <span class="hljs-string">'offline'</span>,
+  <span class="hljs-comment">// set the appropriate scopes</span>
+  scope: <span class="hljs-string">'https://www.googleapis.com/auth/plus.me'</span>,
+  <span class="hljs-comment">// A refresh token is only returned the first time the user</span>
+  <span class="hljs-comment">// consents to providing access.  For illustration purposes,</span>
+  <span class="hljs-comment">// setting the prompt to 'consent' will force this consent</span>
+  <span class="hljs-comment">// every time, forcing a refresh_token to be returned.</span>
+  prompt: <span class="hljs-string">'consent'</span>
+});
+</code></pre>
+				<p>If a refresh_token is set again on <code>OAuth2Client.credentials.refresh_token</code>, you can can <code>refreshAccessToken()</code>:</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> tokens = <span class="hljs-keyword">await</span> oauth2Client.refreshAccessToken();
+<span class="hljs-comment">// your access_token is now refreshed and stored in oauth2Client</span>
+<span class="hljs-comment">// store these new tokens in a safe place (e.g. database)</span>
+</code></pre>
+				<h4 id="using-json-web-tokens">Using JSON Web Tokens</h4>
+				<p>The Google Developers Console provides <code>.json</code> file that you can use to configure a JWT auth client and authenticate your requests, for example when using a service account.</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> JWTClient = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../build/src/index'</span>).JWT;
+<span class="hljs-keyword">const</span> keys = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./jwt.keys.json'</span>);
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">await</span> getJWTClient();
+    <span class="hljs-keyword">const</span> url = <span class="hljs-string">`https://www.googleapis.com/dns/v1/projects/<span class="hljs-subst">${keys.project_id}</span>`</span>;
+    <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> client.request({url});
+    <span class="hljs-built_in">console</span>.log(res.data);
+  } <span class="hljs-keyword">catch</span>(e) {
+    <span class="hljs-built_in">console</span>.error(e);
+  }
+  process.exit();
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getJWTClient</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> JWTClient(
+    keys.client_email,
+    <span class="hljs-literal">null</span>,
+    keys.private_key,
+    [<span class="hljs-string">'https://www.googleapis.com/auth/cloud-platform'</span>],
+  );
+  <span class="hljs-keyword">await</span> client.authorize();
+  <span class="hljs-keyword">return</span> client;
+}
+
+main();
+</code></pre>
+				<p>The parameters for the JWT auth client including how to use it with a <code>.pem</code> file are explained in <a href="samples/jwt.js">samples/jwt.js</a>.</p>
+				<h4 id="loading-credentials-from-environment-variables">Loading credentials from environment variables</h4>
+				<p>Instead of loading credentials from a key file, you can also provide them using an environment variable and the <code>GoogleAuth.fromJSON()</code> method.  This is particularly convenient for systems that deploy directly from source control (Heroku, App Engine, etc).</p>
+				<p>Start by exporting your credentials:</p>
+				<pre><code>$ export CREDS=<span class="hljs-string">'{
+  "</span><span class="hljs-built_in">type</span><span class="hljs-string">": "</span>service_account<span class="hljs-string">",
+  "</span>project_id<span class="hljs-string">": "</span>your-project-id<span class="hljs-string">",
+  "</span>private_key_id<span class="hljs-string">": "</span>your-private-key-id<span class="hljs-string">",
+  "</span>private_key<span class="hljs-string">": "</span>your-private-key<span class="hljs-string">",
+  "</span>client_email<span class="hljs-string">": "</span>your-client-email<span class="hljs-string">",
+  "</span>client_id<span class="hljs-string">": "</span>your-client-id<span class="hljs-string">",
+  "</span>auth_uri<span class="hljs-string">": "</span>https:<span class="hljs-comment">//accounts.google.com/o/oauth2/auth",</span>
+  <span class="hljs-string">"token_uri"</span>: <span class="hljs-string">"https://accounts.google.com/o/oauth2/token"</span>,
+  <span class="hljs-string">"auth_provider_x509_cert_url"</span>: <span class="hljs-string">"https://www.googleapis.com/oauth2/v1/certs"</span>,
+  <span class="hljs-string">"client_x509_cert_url"</span>: <span class="hljs-string">"your-cert-url"</span>
+}<span class="hljs-string">'</span>
+</code></pre><p>Now you can create a new client from the credentials:</p>
+				<pre><code class="lang-js"><span class="hljs-keyword">const</span> {GoogleAuth} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'google-auth-library'</span>);
+
+<span class="hljs-comment">// load the environment variable with our keys</span>
+<span class="hljs-keyword">const</span> keysEnvVar = process.env[<span class="hljs-string">'CREDS'</span>];
+<span class="hljs-keyword">if</span> (!keysEnvVar) {
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'The $CREDS environment variable was not found!'</span>);
+}
+<span class="hljs-keyword">const</span> keys = <span class="hljs-built_in">JSON</span>.parse(keysEnvVar);
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> auth = <span class="hljs-keyword">new</span> GoogleAuth();
+  <span class="hljs-comment">// load the JWT or UserRefreshClient from the keys</span>
+  <span class="hljs-keyword">const</span> client = auth.fromJSON(keys);
+  client.scopes = [<span class="hljs-string">'https://www.googleapis.com/auth/cloud-platform'</span>];
+  <span class="hljs-keyword">await</span> client.authorize();
+  <span class="hljs-keyword">const</span> url = <span class="hljs-string">`https://www.googleapis.com/dns/v1/projects/<span class="hljs-subst">${keys.project_id}</span>`</span>;
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> client.request({url});
+  <span class="hljs-built_in">console</span>.log(res.data);
+}
+
+main().catch(<span class="hljs-built_in">console</span>.error);
+</code></pre>
+				<h4 id="using-a-proxy">Using a Proxy</h4>
+				<p>You can use the following environment variables to proxy HTTP and HTTPS requests:</p>
+				<ul>
+					<li>HTTP_PROXY / http_proxy</li>
+					<li>HTTPS_PROXY / https_proxy</li>
+				</ul>
+				<p>When HTTP_PROXY / http_proxy are set, they will be used to proxy non-SSL requests that do not have an explicit proxy configuration option present. Similarly, HTTPS_PROXY / https_proxy will be respected for SSL requests that do not have an explicit proxy configuration option. It is valid to define a proxy in one of the environment variables, but then override it for a specific request, using the proxy configuration option.</p>
+				<h3 id="questions-problems-">Questions/problems?</h3>
+				<ul>
+					<li>Ask your development related questions on <a href="http://stackoverflow.com/questions/tagged/google-auth-library-nodejs"><img src="https://googledrive.com/host/0ByfSjdPVs9MZbkhjeUhMYzRTeEE/stackoveflow-tag.png" alt="Ask a question on Stackoverflow"></a></li>
+					<li>If you&#39;ve found an bug/issue, please <a href="https://github.com/google/google-auth-library-nodejs/issues">file it on GitHub</a>.</li>
+				</ul>
+				<h2 id="contributing">Contributing</h2>
+				<p>See <a href="https://github.com/google/google-auth-library-nodejs/blob/master/.github/CONTRIBUTING.md">CONTRIBUTING</a>.</p>
+				<h2 id="license">License</h2>
+				<p>This library is licensed under Apache 2.0. Full license text is available in <a href="https://github.com/google/google-auth-library-nodejs/tree/master/LICENSE">LICENSE</a>.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_auth_authclient_.html">"auth/authclient"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_auth_computeclient_.html">"auth/computeclient"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_auth_credentials_.html">"auth/credentials"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_auth_googleauth_.html">"auth/googleauth"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_auth_iam_.html">"auth/iam"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_auth_jwtaccess_.html">"auth/jwtaccess"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_auth_jwtclient_.html">"auth/jwtclient"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_auth_loginticket_.html">"auth/loginticket"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_auth_oauth2client_.html">"auth/oauth2client"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_auth_refreshclient_.html">"auth/refreshclient"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_index_.html">"index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_options_.html">"options"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_pemverifier_.html">"pemverifier"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_transporters_.html">"transporters"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
