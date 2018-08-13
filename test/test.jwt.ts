@@ -262,7 +262,7 @@ it('should unify the promise when refreshing the token', async () => {
   // endpoint. This makes sure that refreshToken is called only once.
   const scopes = [
     createGTokenMock({access_token: 'abc123'}),
-    nock('http://example.com').get('/').thrice().reply(200)
+    nock('http://example.com').get('/').thrice().reply(200, {})
   ];
   const jwt = new JWT({
     email: 'foo@serviceaccount.com',
@@ -288,7 +288,7 @@ it('should clear the cached refresh token promise after completion',
      const scopes = [
        createGTokenMock({access_token: 'abc123'}),
        createGTokenMock({access_token: 'abc123'}),
-       nock('http://example.com').get('/').twice().reply(200)
+       nock('http://example.com').get('/').twice().reply(200, {})
      ];
      const jwt = new JWT({
        email: 'foo@serviceaccount.com',

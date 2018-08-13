@@ -39,7 +39,9 @@ const svcAccountPath = `${instancePath}/service-accounts/?recursive=true`;
 const API_KEY = 'test-123';
 const STUB_PROJECT = 'my-awesome-project';
 const ENDPOINT = '/events:report';
-const RESPONSE_BODY = 'RESPONSE_BODY';
+const RESPONSE_BODY = {
+  rb: 'RESPONSE_BODY'
+};
 const BASE_URL = [
   'https://clouderrorreporting.googleapis.com/v1beta1/projects', STUB_PROJECT
 ].join('/');
@@ -175,7 +177,7 @@ it('should make a request with the api key', async () => {
   const client = auth.fromAPIKey(API_KEY);
   const res = await client.request(
       {url: BASE_URL + ENDPOINT, method: 'POST', data: {'test': true}});
-  assert.strictEqual(RESPONSE_BODY, res.data);
+  assert.deepStrictEqual(RESPONSE_BODY, res.data);
   scope.done();
 });
 
@@ -196,7 +198,7 @@ it('should make a request while preserving original parameters', async () => {
     data: {'test': true},
     params: OTHER_QS_PARAM
   });
-  assert.strictEqual(RESPONSE_BODY, res.data);
+  assert.deepStrictEqual(RESPONSE_BODY, res.data);
   scope.done();
 });
 

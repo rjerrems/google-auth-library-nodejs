@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {AxiosPromise, AxiosRequestConfig} from 'axios';
+import {GetchOptions, GetchPromise} from '@google/getch';
 import {EventEmitter} from 'events';
 
 import {DefaultTransporter} from '../transporters';
@@ -32,7 +32,7 @@ export abstract class AuthClient extends EventEmitter {
   /**
    * Provides an alternative Axios request implementation with auth credentials
    */
-  abstract request<T>(opts: AxiosRequestConfig): AxiosPromise<T>;
+  abstract request<T>(opts: GetchOptions): GetchPromise<T>;
 
   /**
    * Sets the auth credentials.

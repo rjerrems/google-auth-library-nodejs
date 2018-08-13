@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
+import {GetchError} from '@google/getch';
 import * as assert from 'assert';
-import {AxiosError} from 'axios';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
 import * as nock from 'nock';
@@ -27,6 +27,7 @@ import * as url from 'url';
 import {CodeChallengeMethod, OAuth2Client} from '../src';
 import {LoginTicket} from '../src/auth/loginticket';
 import * as messages from '../src/messages';
+
 const assertRejects = require('assert-rejects');
 
 nock.disableNetConnect();
@@ -738,7 +739,7 @@ function mockExample() {
             '/token', undefined,
             {reqheaders: {'content-type': 'application/x-www-form-urlencoded'}})
         .reply(200, {access_token: 'abc123', expires_in: 1}),
-    nock('http://example.com').get('/').reply(200)
+    nock('http://example.com').get('/').reply(200, {})
   ];
 }
 
@@ -772,7 +773,7 @@ it('should unify the promise when refreshing the token', async () => {
             '/token', undefined,
             {reqheaders: {'content-type': 'application/x-www-form-urlencoded'}})
         .reply(200, {access_token: 'abc123', expires_in: 1}),
-    nock('http://example.com').get('/').thrice().reply(200)
+    nock('http://example.com').get('/').thrice().reply(200, {})
   ];
   client.credentials = {refresh_token: 'refresh-token-placeholder'};
   await Promise.all([
@@ -796,7 +797,7 @@ it('should clear the cached refresh token promise after completion',
            })
            .twice()
            .reply(200, {access_token: 'abc123', expires_in: 100000}),
-       nock('http://example.com').get('/').twice().reply(200)
+       nock('http://example.com').get('/').twice().reply(200, {})
      ];
      client.credentials = {refresh_token: 'refresh-token-placeholder'};
      await client.request({url: 'http://example.com'});
@@ -819,7 +820,7 @@ it('should clear the cached refresh token promise after throw', async () => {
             '/token', undefined,
             {reqheaders: {'content-type': 'application/x-www-form-urlencoded'}})
         .reply(200, {access_token: 'abc123', expires_in: 100000}),
-    nock('http://example.com').get('/').reply(200)
+    nock('http://example.com').get('/').reply(200, {})
   ];
   client.credentials = {refresh_token: 'refresh-token-placeholder'};
   try {
@@ -942,7 +943,7 @@ it('should not retry requests with streaming data', done => {
   };
   client.request({method: 'POST', url: 'http://example.com', data: s}, err => {
     scope.done();
-    const e = err as AxiosError;
+    const e = err as GetchError;
     assert(e);
     assert.strictEqual(e.response!.status, 401);
     done();

@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-import {AxiosError, AxiosPromise, AxiosRequestConfig, AxiosResponse} from 'axios';
+import {GetchError, GetchOptions, GetchPromise, GetchResponse} from '@google/getch';
 import * as gcpMetadata from 'gcp-metadata';
+
 import * as messages from '../messages';
+
 import {CredentialRequest, Credentials} from './credentials';
 import {GetTokenResponse, OAuth2Client, RefreshOptions} from './oauth2client';
 
@@ -66,9 +68,10 @@ export class Compute extends OAuth2Client {
   protected async refreshTokenNoCache(refreshToken?: string|
                                       null): Promise<GetTokenResponse> {
     const tokenPath = `service-accounts/${this.serviceAccountEmail}/token`;
-    let res: AxiosResponse<CredentialRequest>;
+    let res: GetchResponse<CredentialRequest>;
     try {
-      res = await gcpMetadata.instance(tokenPath);
+      res = (await gcpMetadata.instance(tokenPath)) as
+          GetchResponse<CredentialRequest>;
     } catch (e) {
       e.message = 'Could not refresh access token.';
       throw e;
@@ -83,10 +86,10 @@ export class Compute extends OAuth2Client {
     return {tokens, res};
   }
 
-  protected requestAsync<T>(opts: AxiosRequestConfig, retry = false):
-      AxiosPromise<T> {
+  protected requestAsync<T>(opts: GetchOptions, retry = false):
+      GetchPromise<T> {
     return super.requestAsync<T>(opts, retry).catch(e => {
-      const res = (e as AxiosError).response;
+      const res = (e as GetchError).response;
       if (res && res.status) {
         let helpfulMessage = null;
         if (res.status === 403) {

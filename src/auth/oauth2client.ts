@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-import {AxiosError, AxiosPromise, AxiosRequestConfig, AxiosResponse} from 'axios';
+import {GetchError, GetchOptions, GetchPromise, GetchResponse} from '@google/getch';
 import * as crypto from 'crypto';
 import * as http from 'http';
 import * as querystring from 'querystring';
 import * as stream from 'stream';
+
 import * as messages from '../messages';
+
 import {PemVerifier} from './../pemverifier';
 import {BodyResponseCallback} from './../transporters';
 import {AuthClient} from './authclient';
@@ -245,52 +247,52 @@ export interface GenerateAuthUrlOpts {
 }
 
 export interface GetTokenCallback {
-  (err: AxiosError|null, token?: Credentials|null,
-   res?: AxiosResponse|null): void;
+  (err: GetchError|null, token?: Credentials|null,
+   res?: GetchResponse|null): void;
 }
 
 export interface GetTokenResponse {
   tokens: Credentials;
-  res: AxiosResponse|null;
+  res: GetchResponse|null;
 }
 
 export interface GetAccessTokenCallback {
-  (err: AxiosError|null, token?: string|null, res?: AxiosResponse|null): void;
+  (err: GetchError|null, token?: string|null, res?: GetchResponse|null): void;
 }
 
 export interface GetAccessTokenResponse {
   token?: string|null;
-  res?: AxiosResponse|null;
+  res?: GetchResponse|null;
 }
 
 export interface RefreshAccessTokenCallback {
-  (err: AxiosError|null, credentials?: Credentials|null,
-   res?: AxiosResponse|null): void;
+  (err: GetchError|null, credentials?: Credentials|null,
+   res?: GetchResponse|null): void;
 }
 
 export interface RefreshAccessTokenResponse {
   credentials: Credentials;
-  res: AxiosResponse|null;
+  res: GetchResponse|null;
 }
 
 export interface RequestMetadataResponse {
   headers: Headers;
-  res?: AxiosResponse<void>|null;
+  res?: GetchResponse<void>|null;
 }
 
 export interface RequestMetadataCallback {
-  (err: AxiosError|null, headers?: Headers,
-   res?: AxiosResponse<void>|null): void;
+  (err: GetchError|null, headers?: Headers,
+   res?: GetchResponse<void>|null): void;
 }
 
 export interface GetFederatedSignonCertsCallback {
-  (err: AxiosError|null, certs?: Certificates,
-   response?: AxiosResponse<void>|null): void;
+  (err: GetchError|null, certs?: Certificates,
+   response?: GetchResponse<void>|null): void;
 }
 
 export interface FederatedSignonCertsResponse {
   certs: Certificates;
-  res?: AxiosResponse<void>|null;
+  res?: GetchResponse<void>|null;
 }
 
 export interface RevokeCredentialsResult {
@@ -680,7 +682,7 @@ export class OAuth2Client extends AuthClient {
       r = await this.refreshToken(thisCreds.refresh_token);
       tokens = r.tokens;
     } catch (err) {
-      const e = err as AxiosError;
+      const e = err as GetchError;
       if (e.response &&
           (e.response.status === 403 || e.response.status === 404)) {
         e.message = 'Could not refresh access token.';
@@ -703,13 +705,13 @@ export class OAuth2Client extends AuthClient {
    * @param token The existing token to be revoked.
    * @param callback Optional callback fn.
    */
-  revokeToken(token: string): AxiosPromise<RevokeCredentialsResult>;
+  revokeToken(token: string): GetchPromise<RevokeCredentialsResult>;
   revokeToken(
       token: string,
       callback: BodyResponseCallback<RevokeCredentialsResult>): void;
   revokeToken(
       token: string, callback?: BodyResponseCallback<RevokeCredentialsResult>):
-      AxiosPromise<RevokeCredentialsResult>|void {
+      GetchPromise<RevokeCredentialsResult>|void {
     const opts = {
       url: OAuth2Client.GOOGLE_OAUTH2_REVOKE_URL_ + '?' +
           querystring.stringify({token})
@@ -727,11 +729,11 @@ export class OAuth2Client extends AuthClient {
    * Revokes access token and clears the credentials object
    * @param callback callback
    */
-  revokeCredentials(): AxiosPromise<RevokeCredentialsResult>;
+  revokeCredentials(): GetchPromise<RevokeCredentialsResult>;
   revokeCredentials(callback: BodyResponseCallback<RevokeCredentialsResult>):
       void;
   revokeCredentials(callback?: BodyResponseCallback<RevokeCredentialsResult>):
-      AxiosPromise<RevokeCredentialsResult>|void {
+      GetchPromise<RevokeCredentialsResult>|void {
     if (callback) {
       this.revokeCredentialsAsync().then(res => callback(null, res), callback);
     } else {
@@ -757,10 +759,10 @@ export class OAuth2Client extends AuthClient {
    * @param callback callback.
    * @return Request object
    */
-  request<T>(opts: AxiosRequestConfig): AxiosPromise<T>;
-  request<T>(opts: AxiosRequestConfig, callback: BodyResponseCallback<T>): void;
-  request<T>(opts: AxiosRequestConfig, callback?: BodyResponseCallback<T>):
-      AxiosPromise<T>|void {
+  request<T>(opts: GetchOptions): GetchPromise<T>;
+  request<T>(opts: GetchOptions, callback: BodyResponseCallback<T>): void;
+  request<T>(opts: GetchOptions, callback?: BodyResponseCallback<T>):
+      GetchPromise<T>|void {
     if (callback) {
       this.requestAsync<T>(opts).then(r => callback(null, r), e => {
         return callback(e, e.response);
@@ -770,9 +772,9 @@ export class OAuth2Client extends AuthClient {
     }
   }
 
-  protected async requestAsync<T>(opts: AxiosRequestConfig, retry = false):
-      Promise<AxiosResponse<T>> {
-    let r2: AxiosResponse;
+  protected async requestAsync<T>(opts: GetchOptions, retry = false):
+      Promise<GetchResponse<T>> {
+    let r2: GetchResponse;
     try {
       const r = await this.getRequestMetadataAsync(opts.url);
       if (r.headers && r.headers.Authorization) {
@@ -785,7 +787,7 @@ export class OAuth2Client extends AuthClient {
       }
       r2 = await this.transporter.request<T>(opts);
     } catch (e) {
-      const res = (e as AxiosError).response;
+      const res = (e as GetchError).response;
       if (res) {
         const statusCode = res.status;
         // Retry the request for metadata if the following criteria are true:
@@ -901,7 +903,7 @@ export class OAuth2Client extends AuthClient {
         (nowTime < this.certificateExpiry.getTime())) {
       return {certs: this.certificateCache!};
     }
-    let res: AxiosResponse;
+    let res: GetchResponse;
     try {
       res = await this.transporter.request(
           {url: OAuth2Client.GOOGLE_OAUTH2_FEDERATED_SIGNON_CERTS_URL_});

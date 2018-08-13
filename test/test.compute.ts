@@ -33,7 +33,7 @@ function mockToken(statusCode = 200) {
 }
 
 function mockExample() {
-  return nock(url).get('/').reply(200);
+  return nock(url).get('/').reply(200, {});
 }
 
 // set up compute client.

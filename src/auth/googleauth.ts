@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {AxiosRequestConfig, AxiosResponse} from 'axios';
+import {GetchOptions, GetchResponse} from '@google/getch';
 import {exec} from 'child_process';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
@@ -733,7 +733,7 @@ export class GoogleAuth {
    * @param opts Axios request options for the HTTP request.
    */
   // tslint:disable-next-line no-any
-  async request<T = any>(opts: AxiosRequestConfig): Promise<AxiosResponse<T>> {
+  async request<T = any>(opts: GetchOptions): Promise<GetchResponse<T>> {
     const client = await this.getClient();
     return client.request<T>(opts);
   }

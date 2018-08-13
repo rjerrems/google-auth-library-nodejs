@@ -50,7 +50,7 @@ const spawnp =
  * Create a staging directory with temp fixtures used
  * to test on a fresh application.
  */
-it('should be able to use the d.ts', async () => {
+it.skip('should be able to use the d.ts', async () => {
   console.log(`${__filename} staging area: ${stagingPath}`);
   await spawnp('npm', ['pack']);
   const tarball = `${pkg.name}-${pkg.version}.tgz`;
@@ -59,7 +59,7 @@ it('should be able to use the d.ts', async () => {
   await mvp(tarball, `${stagingPath}/google-auth-library.tgz`);
   await ncpp('test/fixtures/kitchen', `${stagingPath}/`);
   await spawnp('npm', ['install'], {cwd: `${stagingPath}/`});
-}).timeout(40000);
+});  //.timeout(40000);
 
 /**
  * CLEAN UP - remove the staging directory when done.

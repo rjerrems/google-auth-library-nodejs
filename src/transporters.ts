@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import axios, {AxiosError, AxiosPromise, AxiosRequestConfig, AxiosResponse} from 'axios';
+import {getch, GetchError, GetchOptions, GetchPromise, GetchResponse} from '@google/getch';
+
 import {validate} from './options';
 
 // tslint:disable-next-line no-var-requires
@@ -22,30 +23,20 @@ const pkg = require('../../package.json');
 const PRODUCT_NAME = 'google-api-nodejs-client';
 
 export interface Transporter {
-  request<T>(opts: AxiosRequestConfig): AxiosPromise<T>;
-  request<T>(opts: AxiosRequestConfig, callback?: BodyResponseCallback<T>):
-      void;
-  request<T>(opts: AxiosRequestConfig, callback?: BodyResponseCallback<T>):
-      AxiosPromise|void;
+  request<T>(opts: GetchOptions): GetchPromise<T>;
+  request<T>(opts: GetchOptions, callback?: BodyResponseCallback<T>): void;
+  request<T>(opts: GetchOptions, callback?: BodyResponseCallback<T>):
+      GetchPromise|void;
 }
 
 export interface BodyResponseCallback<T> {
   // The `body` object is a truly dynamic type.  It must be `any`.
-  (err: Error|null, res?: AxiosResponse<T>|null): void;
+  (err: Error|null, res?: GetchResponse<T>|null): void;
 }
 
-export interface RequestError extends AxiosError {
+export interface RequestError extends GetchError {
   errors: Error[];
 }
-
-/**
- * Axios will use XHR if it is available. In the case of Electron,
- * since XHR is there it will try to use that. This leads to OPTIONS
- * preflight requests which googleapis DOES NOT like. This line of
- * code pins the adapter to ensure it uses node.
- * https://github.com/google/google-api-nodejs-client/issues/1083
- */
-axios.defaults.adapter = require('axios/lib/adapters/http');
 
 export class DefaultTransporter {
   /**
@@ -55,10 +46,10 @@ export class DefaultTransporter {
 
   /**
    * Configures request options before making a request.
-   * @param opts AxiosRequestConfig options.
+   * @param opts GetchOptions options.
    * @return Configured options.
    */
-  configure(opts: AxiosRequestConfig = {}): AxiosRequestConfig {
+  configure(opts: GetchOptions = {}): GetchOptions {
     // set transporter user agent
     opts.headers = opts.headers || {};
     const uaValue: string = opts.headers['User-Agent'];
@@ -73,15 +64,14 @@ export class DefaultTransporter {
 
   /**
    * Makes a request using Axios with given options.
-   * @param opts AxiosRequestConfig options.
-   * @param callback optional callback that contains AxiosResponse object.
-   * @return AxiosPromise, assuming no callback is passed.
+   * @param opts GetchOptions options.
+   * @param callback optional callback that contains GetchResponse object.
+   * @return GetchPromise, assuming no callback is passed.
    */
-  request<T>(opts: AxiosRequestConfig): AxiosPromise<T>;
-  request<T>(opts: AxiosRequestConfig, callback?: BodyResponseCallback<T>):
-      void;
-  request<T>(opts: AxiosRequestConfig, callback?: BodyResponseCallback<T>):
-      AxiosPromise|void {
+  request<T>(opts: GetchOptions): GetchPromise<T>;
+  request<T>(opts: GetchOptions, callback?: BodyResponseCallback<T>): void;
+  request<T>(opts: GetchOptions, callback?: BodyResponseCallback<T>):
+      GetchPromise|void {
     // ensure the user isn't passing in request-style options
     opts = this.configure(opts);
     try {
@@ -95,7 +85,7 @@ export class DefaultTransporter {
     }
 
     if (callback) {
-      axios(opts).then(
+      getch(opts).then(
           r => {
             callback(null, r);
           },
@@ -103,7 +93,7 @@ export class DefaultTransporter {
             callback(this.processError(e));
           });
     } else {
-      return axios(opts).catch(e => {
+      return getch(opts).catch(e => {
         throw this.processError(e);
       });
     }
@@ -112,7 +102,7 @@ export class DefaultTransporter {
   /**
    * Changes the error to include details from the body.
    */
-  private processError(e: AxiosError): RequestError {
+  private processError(e: GetchError): RequestError {
     const res = e.response;
     const err = e as RequestError;
     const body = res ? res.data : null;
